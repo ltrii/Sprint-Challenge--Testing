@@ -8,7 +8,7 @@ describe('games model', () => {
     });
 
     it('should insert the provided games into the db', async () => {
-      await Games.insert({ title: "gModel", genre: "Testing", releaseYear: 2020 });
+      await Games.insert({ title: "gModelz", genre: "Testing", releaseYear: 2020 });
 
       const games = await db('games');
       expect(games).toHaveLength(3);
@@ -18,7 +18,7 @@ describe('games model', () => {
       let game = await Games.insert({ title: "gModel", genre: "Testing", releaseYear: 2020 });
       expect(game.title).toBe("gModel");
 
-      game = await Games.insert({ title: "gModel", genre: "Testing", releaseYear: 2020 });
+      game = await Games.insert({ title: "gModel2", genre: "Testing", releaseYear: 2022 });
       expect(game.genre).toBe("Testing");
     });
   });
