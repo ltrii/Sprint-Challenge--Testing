@@ -21,5 +21,10 @@ describe('games model', () => {
       game = await Games.insert({ title: "gModel2", genre: "Testing", releaseYear: 2022 });
       expect(game.genre).toBe("Testing");
     });
+
+    it('should pull game by id', async () => {
+        let gameID = await Games.findById(1);
+        expect(gameID.title).toBe("Pacman");
+      });
   });
 });

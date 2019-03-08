@@ -29,5 +29,9 @@ function getAll() {
 }
 
 function findById(id) {
-  return null;
+  const game = db('games')
+  .where({ id: id })
+  .first();
+  if(!game) return null
+  return game;
 }

@@ -44,13 +44,13 @@ describe('POST /games', () => {
 })
     it("should return game title", async () => {
             const game = {
-                title: 'Awesome Game',
+                title: 'Awesome Game2',
                 genre: 'Shooty Bang Adventure with Roles',
                 releaseYear: 3008
             };
             const response = await request(server)
             .post("/games")
             .send(game);
-        expect(response.body.title).toEqual('Awesome Game');
+        expect(response.body.title).toEqual('Awesome Game2');
 })
 });
