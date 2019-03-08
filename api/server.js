@@ -18,16 +18,16 @@ server.get('/games', async (req, res) => {
 
 server.post('/games', async (req, res) => {
     const game = req.body;
-    if(game.homeScore && game.awayScore){
+    if(game.title && game.genre){
         games.insert(game)
             .then(newgame => {
                 res.status(201).json(newgame);
             })
             .catch(() => {
-                res.status(500).json({ message: 'game failed to add'})
+                res.status(500).json ({ message: 'game failed to add'})
             })
     } else {
-        res.status(400).json({ message: 'Missing game details' })
+        res.status(422).json({ message: 'Missing game details' })
     }
 })
 
